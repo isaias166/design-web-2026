@@ -1,0 +1,19 @@
+$cor-texto : rgb(6, 5, 82);
+$cor-h1 : rgb(219, 255, 59);
+$cor-background : rgb(226, 19, 19);
+
+
+body{
+    color: $cor-texto;
+
+    // body{}
+    // body h1{}
+    // body h1:hover
+    h1{
+        color: $cor-h1;
+
+        &:hover{
+            background-color: $cor-background;
+        }
+    }
+}
