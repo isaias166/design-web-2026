@@ -2,187 +2,356 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atividade 7</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 7</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@latest/src/css/phosphor.css" />
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@latest/src/css/phosphor.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body class="bg-gray-100 min-h-screen">
 
-  <header class="bg-[#1b6b3e] text-white shadow-md">
-    <div class="container mx-auto px-6 py-4">
+    <header class="bg-[#1b6b3e] text-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
 
 
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-3">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-3">
 
-        <!-- Esquerda: Logo + Slogan -->
-        <div class="flex items-center gap-6">
-          <img src="assets/img/ifrn_logo_branco.svg" alt="Logo IFRN" class="h-10">
-          <h1 class="hidden">
-            <a href="/"
-              title="Instituto Federal de Educação, Ciência e Tecnologia do Estado do Rio Grande do Norte"></a>
-          </h1>
-          <p class="text-[11px] font-normal leading-tight max-w-[200px] text-white/90">
-            Educação, Ciência, Cultura e Tecnologia<br><span class="font-bold">em todo o Rio Grande do Norte</span>
-          </p>
+                <!-- Esquerda: Logo + Slogan -->
+                <div class="flex items-center gap-6">
+                    <img src="assets/img/ifrn_logo_branco.svg" alt="Logo IFRN" class="h-10">
+                    <h1 class="hidden">
+                        <a href="/"
+                            title="Instituto Federal de Educação, Ciência e Tecnologia do Estado do Rio Grande do Norte"></a>
+                    </h1>
+                    <p class="text-[11px] font-normal leading-tight max-w-[200px] text-white/90">
+                        Educação, Ciência, Cultura e Tecnologia<br><span class="font-bold">em todo o Rio Grande do
+                            Norte</span>
+                    </p>
+                </div>
+
+                <!-- MENU HAMBÚRGUER (mobile) -->
+                <button id="menuToggle" aria-label="Menu"
+                    class="md:hidden text-2xl text-white p-1 rounded hover:bg-green-700 border-none">
+                    <i class="ph ph-list"></i>
+                </button>
+
+                <!-- Direita: Redes Sociais, Acessibilidade e Busca -->
+                <div class="hidden md:flex items-center gap-3">
+
+                    <!-- Ícones sociais -->
+                    <div class="flex items-center gap-2">
+                        <a href="#" aria-label="Instagram"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
+                                class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="Twitter"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
+                                class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
+                                class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="YouTube"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
+                                class="ph ph-youtube-logo"></i></a>
+                        <a href="#" aria-label="Spotify"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
+                                class="ph ph-spotify-logo"></i></a>
+                        <a href="#" aria-label="TikTok"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
+                                class="ph ph-tiktok-logo"></i></a>
+                    </div>
+
+                    <div class="h-4 w-[1px] bg-white/40 mx-1"></div>
+
+                    <!-- Acessibilidade -->
+                    <div class="flex items-center gap-2">
+                        <button id="altocontraste" type="button" aria-label="Alto contraste"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition cursor-pointer text-sm">
+                            <i class="ph ph-circle-half"></i>
+                        </button>
+                        <button type="button" aria-label="Modo escuro"
+                            class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition cursor-pointer text-sm">
+                            <i class="ph ph-moon"></i>
+                        </button>
+                    </div>
+
+                    <!-- Busca -->
+                    <form method="get" action="/search/"
+                        class="flex items-center bg-white text-gray-800 rounded-full px-3 py-1 ml-2 w-48">
+                        <button type="submit" aria-label="Pesquisar"
+                            class="bg-transparent text-gray-500 mr-2 cursor-pointer flex items-center">
+                            <i class="ph ph-magnifying-glass text-sm"></i>
+                        </button>
+                        <input type="search" name="query" placeholder="Busca" aria-label="Busca"
+                            class="bg-transparent text-xs text-gray-800 placeholder-gray-500 focus:outline-none w-full" />
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- LINHA INFERIOR: NAVEGAÇÃO PRINCIPAL -->
+            <div class="border-t border-white/30 pt-3">
+                <nav aria-label="Navegação principal"
+                    class="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold tracking-wide">
+                    <a href="#" class="hover:underline">Processos seletivos</a>
+                    <a href="#" class="hover:underline">Cursos</a>
+                    <a href="#" class="hover:underline">Campi</a>
+                    <a href="#" class="hover:underline">Institucional</a>
+                    <a href="#" class="hover:underline">Acesso à Informação</a>
+                    <a href="#" class="hover:underline">Eventos</a>
+                    <a href="#" class="hover:underline">Serviços</a>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <h1 class="text-3xl font-bold text-green-900 mb-8 border-b-2 border-green-800 pb-2">
+            Notícias - IFRN
+        </h1>
+
+        <section class="mb-10">
+
+            <h2 class="text-2xl font-bold text-green-900 mb-5">
+                Jogos Intercampi 2026
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+                    <img src="https://portal.ifrn.edu.br/media/images/22836_Abertura_dos_Jogos_Intercampi_2022_reune.width-500.jpg"
+                        alt="Jogos Intercampi" class="w-full h-48 object-cover">
+
+                    <div class="p-5">
+
+                        <header class="flex items-center justify-between gap-3">
+
+                            <span
+                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                Jogos Intercampi Estudantis 2026
+                            </span>
+
+                            <time class="text-gray-500 text-xs">
+                                Há 1 hora
+                            </time>
+
+                        </header>
+
+                        <h3 class="text-xl font-bold text-green-800 mt-2">
+                            Abertura dos Jogos acontecerá no dia 24/08/2026
+                        </h3>
+
+                        <p class="text-gray-700 text-sm mt-2">
+                            Evento marca o início das atividades esportivas entre os campi do IFRN.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+                    <img src="https://portal.ifrn.edu.br/media/images/Judo_feminino._Foto__Pablo_Araujo._2.width-800.jpg"
+                        alt="Judô" class="w-full h-48 object-cover">
+
+                    <div class="p-5">
+
+                        <header class="flex items-center justify-between gap-3">
+
+                            <span
+                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                Jogos Intercampi Estudantis 2026
+                            </span>
+
+                            <time class="text-gray-500 text-xs">
+                                Há 4 dias, 16 horas
+                            </time>
+
+                        </header>
+
+                        <h3 class="text-xl font-bold text-green-800 mt-2">
+                            Judô estreia e futebol define classificados nos Jogos Intercampi
+                        </h3>
+
+                        <p class="text-gray-700 text-sm mt-2">
+                            Quinta-feira reúne estreia da modalidade e rodadas que encaminham as semifinais da fase
+                            final.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+                    <img src="https://www.aparu.org.br/wp-content/uploads/2025/05/bocha-da-aparu_n.webp" alt="bocha"
+                        class="w-full h-48 object-cover">
+
+                    <div class="p-5">
+
+                        <header class="flex items-center justify-between gap-3">
+
+                            <span
+                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                Jogos Intercampi Estudantis 2026
+                            </span>
+
+                            <time class="text-gray-500 text-xs">
+                                Há 5 dias, 12 horas
+                            </time>
+
+                        </header>
+
+                        <h3 class="text-xl font-bold text-green-800 mt-2">
+                            Novas modalidades ampliam programação dos Jogos Intercampi nesta quarta-feira
+                        </h3>
+
+                        <p class="text-gray-700 text-sm mt-2">
+                            Segundo dia da fase final teve provas individuais, disputas coletivas e continuidade das
+                            rodadas classificatórias.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        </div>
+        </section>
+
+        <section class="mb-10">
+
+            <h2 class="text-2xl font-bold text-green-900 mb-5">
+                Reunião
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+                    <img src="https://s1.static.brasilescola.uol.com.br/be/vestibular/campus-natal-central-533ee2793b4b7.jpg"
+                        alt="Reunião no IFRN" class="w-full h-48 object-cover">
+
+                    <div class="p-5">
+
+                        <header class="flex items-center justify-between gap-3">
+
+                            <span
+                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                Reunião
+                            </span>
+
+                            <time class="text-gray-500 text-xs">
+                                Há 20 horas
+                            </time>
+
+                        </header>
+
+                        <h3 class="text-xl font-bold text-green-800 mt-2">
+                            IFRN sediou eventos sobre acessibilidade e inclusão na educação
+                        </h3>
+
+                        <p class="text-gray-700 text-sm mt-2">
+                            Programação ocorreu entre os dias 26 e 28 de agosto, no Campus Natal-Central.
+                        </p>
+
+                    </div>
+
+
+                </article>
+                <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT58zgISW4KMRUtpdPZVgWcjmySQt6LzqSagUI1DjafobdiqR3dK7MaNVc&s=10"
+                        alt="IFRN - ZN" class="w-full h-48 object-cover">
+
+                    <div class="p-5">
+
+                        <header class="flex items-center justify-between gap-3">
+
+                            <span
+                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                Reunião
+                            </span>
+
+                            <time class="text-gray-500 text-xs">
+                                Há 20 horas
+                            </time>
+
+                        </header>
+
+                        <h3 class="text-xl font-bold text-green-800 mt-2">
+                            Campus Zona Norte anuncia suspensão das aulas do dia 24/09/2026
+                        </h3>
+
+                        <p class="text-gray-700 text-sm mt-2">
+                            A suspensão ocorreu após reunião da diretoria.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                  <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+                    <img src="https://portal.ifrn.edu.br/media/images/23608_IFRN_realiza_Encontro_de_Coordenadores_d.width-500.jpg"
+                        alt="IFRN - ZN" class="w-full h-48 object-cover">
+
+                    <div class="p-5">
+
+                        <header class="flex items-center justify-between gap-3">
+
+                            <span
+                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                                Reunião
+                            </span>
+
+                            <time class="text-gray-500 text-xs">
+                                Há 24 horas
+                            </time>
+
+                        </header>
+
+                        <h3 class="text-xl font-bold text-green-800 mt-2">
+                            IFRN realiza Encontro de Coordenadores de Extensão 28/09/2026
+                        </h3>
+
+                        <p class="text-gray-700 text-sm mt-2">
+                            A suspensão ocorreu após reunião da diretoria.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+
         </div>
 
-        <!-- MENU HAMBÚRGUER (mobile) -->
-        <button id="menuToggle" aria-label="Menu"
-          class="md:hidden text-2xl text-white p-1 rounded hover:bg-green-700 border-none">
-          <i class="ph ph-list"></i>
-        </button>
-
-        <!-- Direita: Redes Sociais, Acessibilidade e Busca -->
-        <div class="hidden md:flex items-center gap-3">
-
-          <!-- Ícones sociais -->
-          <div class="flex items-center gap-2">
-            <a href="#" aria-label="Instagram"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
-                class="ph ph-instagram-logo"></i></a>
-            <a href="#" aria-label="Twitter"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
-                class="ph ph-x-logo"></i></a>
-            <a href="#" aria-label="LinkedIn"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
-                class="ph ph-linkedin-logo"></i></a>
-            <a href="#" aria-label="YouTube"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
-                class="ph ph-youtube-logo"></i></a>
-            <a href="#" aria-label="Spotify"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
-                class="ph ph-spotify-logo"></i></a>
-            <a href="#" aria-label="TikTok"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition text-sm"><i
-                class="ph ph-tiktok-logo"></i></a>
-          </div>
-
-          <div class="h-4 w-[1px] bg-white/40 mx-1"></div>
-
-          <!-- Acessibilidade -->
-          <div class="flex items-center gap-2">
-            <button id="altocontraste" type="button" aria-label="Alto contraste"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition cursor-pointer text-sm">
-              <i class="ph ph-circle-half"></i>
-            </button>
-            <button type="button" aria-label="Modo escuro"
-              class="flex items-center justify-center w-7 h-7 border border-white rounded-full hover:bg-white/20 transition cursor-pointer text-sm">
-              <i class="ph ph-moon"></i>
-            </button>
-          </div>
-
-          <!-- Busca -->
-          <form method="get" action="/search/"
-            class="flex items-center bg-white text-gray-800 rounded-full px-3 py-1 ml-2 w-48">
-            <button type="submit" aria-label="Pesquisar"
-              class="bg-transparent text-gray-500 mr-2 cursor-pointer flex items-center">
-              <i class="ph ph-magnifying-glass text-sm"></i>
-            </button>
-            <input type="search" name="query" placeholder="Busca" aria-label="Busca"
-              class="bg-transparent text-xs text-gray-800 placeholder-gray-500 focus:outline-none w-full" />
-          </form>
-
-        </div>
-      </div>
-
-      <!-- LINHA INFERIOR: NAVEGAÇÃO PRINCIPAL -->
-      <div class="border-t border-white/30 pt-3">
-        <nav aria-label="Navegação principal"
-          class="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold tracking-wide">
-          <a href="#" class="hover:underline">Processos seletivos</a>
-          <a href="#" class="hover:underline">Cursos</a>
-          <a href="#" class="hover:underline">Campi</a>
-          <a href="#" class="hover:underline">Institucional</a>
-          <a href="#" class="hover:underline">Acesso à Informação</a>
-          <a href="#" class="hover:underline">Eventos</a>
-          <a href="#" class="hover:underline">Serviços</a>
-        </nav>
-      </div>
-
-    </div>
-  </header>
 
 
-    <!-- O card será inserido aqui pelos alunos -->
-    <section class="max-w-7xl mx-auto px-4 py-6">
 
-    <h1 class="text-3xl font-bold text-green-900 mb-8 border-b-2 border-green-800 pb-2">
-      Notícias - IFRN
-    </h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-        <img class="w-full h-48 object-cover"
-          src="https://media.istockphoto.com/id/1347653184/pt/foto/young-basketball-player-on-practice-session-youth-basketball-team-bouncing-balls-on-sports.jpg?s=612x612&w=is&k=20&c=fO7iupvMWJ6NRpN1J0q_ahATayvAvWqpGfoPwr6dcf8="
-          alt="" />
-        <div class="p-5 flex flex-col flex-1 space-y-2">
-          <div>
-            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-              Jogos Intercampi - IFRN
-            </span>
-          </div>
-          <h2 class="text-xl font-bold text-green-900">
-            Abertura dos Jogos acontecera no dia 24/08/2026
-          </h2>
-          <p class="text-gray-700 text-sm flex-1">
-
-          </p>
-          <span class="text-gray-500 text-xs mt-2 block">
-
-          </span>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-        <img class="w-full h-48 object-cover"
-          src="https://portal.ifrn.edu.br/media/images/43769_Campus_tera_horario_especial_02wFSCd.2e16d0ba.fill-540x540.png"
-          alt="" />
-        <div class="p-5 flex flex-col flex-1 space-y-2">
-          <div>
-            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-              Processos seletivos abertos
-            </span>
-          </div>
-          <h2 class="text-xl font-bold text-green-900">
-            Seu ponto de partida para cursos, seleções e experiências que transformam seu futuro.
-          </h2>
-          <p class="text-gray-700 text-sm flex-1">
-
-          </p>
-          <span class="text-gray-500 text-xs mt-2 block">
-
-          </span>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-        <img class="w-full h-48 object-cover"
-          src="https://s2-g1.glbimg.com/tXpqULhHgYQnrRHKpcW3YgT4Ixk=/0x0:1280x720/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/b/G/UGYTqwSw2mUetKUMevNQ/whatsapp-image-2020-08-11-at-13.49.06.jpeg"
-          alt="" />
-        <div class="p-5 flex flex-col flex-1 space-y-2">
-          <div>
-            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-              Jogos Intercampi - IFRN
-            </span>
-          </div>
-          <h2 class="text-xl font-bold text-green-900">
-            Aulas suspensas para o campus Zona norte </h2>
-          <p class="text-gray-700 text-sm flex-1">
-
-          </p>
-          <span class="text-gray-500 text-xs mt-2 block">
-
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </main>
 </body>
 
 
