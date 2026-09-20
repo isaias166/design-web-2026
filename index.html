@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 1 – </title>
+    <title>Atividade 12 </title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -14,50 +14,132 @@
 
 <body>
 
-    <section class="flex gap-6 ">
 
-        <div class="card w-96 shadow-sm">
-            <figure>
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-            </figure>
-            <div class="card-body">
-                <h2 class="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
+    <header>
+        <div class="navbar bg-base-100 shadow-sm px-4">
+
+            <div class="navbar-start">
+                <a class="text-xl font-bold">Isaías Marques</a>
+            </div>
+
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="#apresentacao">Apresentação</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Lado Direito: Botão de Ação -->
+            <div class="navbar-end">
+                <a href="#contato" class="btn btn-primary btn-sm">Fale Comigo</a>
             </div>
         </div>
-    
-        <div class="card w-96 shadow-sm">
-            <figure>
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-            </figure>
-            <div class="card-body">
-                <h2 class="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="card w-96 shadow-sm">
-            <figure>
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-            </figure>
-            <div class="card-body">
-                <h2 class="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
+    </header>
+
+    <section id="apresentacao" class="py-12 px-4 max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Sobre Mim</h2>
+        <p class="text-base mb-6">
+            Estudante do IFRN dedicado à criação de interfaces web modernas e responsivas utilizando Tailwind CSS e
+            DaisyUI.
+        </p>
+
+        <div class="flex justify-center gap-2 flex-wrap">
+            <span class="badge badge-primary">HTML5</span>
+            <span class="badge badge-secondary">CSS3</span>
+            <span class="badge badge-accent">Tailwind</span>
+            <span class="badge badge-success">DaisyUI</span>
+            <span class="badge badge-info">Git & GitHub</span>
         </div>
     </section>
 
+    <section id="projetos" class="py-12 px-4 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Meus projetos</h2>
 
+        <div class="grid grid-cons-1 md:grid-cols-3 gap-6 jusify-items-center">
+            <!-- Card 1 -->
+            <div class="card bg-base-100 w-full shadow-sm border border-base-200">
+                <figure>
+                    <img src="assets/img/Captura de tela 2026-09-20 131230.png" alt="Projeto 1" />
+                </figure>
+                <div class="card-body">
+                    <h3 class="card-title">Portal Institucional</h3>
+                    <p class="text-sm">Desenvolvimento de páginas web focadas na identidade visual
+                        institucional.</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-primary btn-sm">Ver Projeto</button>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Card 2 -->
+            <div class="card bg-base-100 w-full shadow-sm border border-base-200">
+                <figure>
+                    <img src="assets/img/image.png" alt="Projeto 2" />
+                </figure>
+                <div class="card-body">
+                    <h3 class="card-title">Landing Page</h3>
+                    <p class="text-sm">Página de conversão moderna, totalmente responsiva com Tailwind.</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-primary btn-sm">Ver Projeto</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card bg-base-100 w-full shadow-sm border border-base-200">
+                <figure>
+                    <img src="assets/img/Captura de tela 2026-09-20 131748.png" alt="Projeto 3" />
+                </figure>
+                <div class="card-body">
+                    <h3 class="card-title">Dashboard Simples</h3>
+                    <p class="text-sm">Painel administrativo estruturado com grids responsivos e DaisyUI.</p>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-primary btn-sm">Ver Projeto</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="py-16 px-4 max-w-xl mx-auto">
+        <div class="card bg-base-100 shadow-xl border border-base-200">
+            <div class="card-body">
+                <h2 class="card-title text-2xl font-bold justify-center mb-2">Fale Comigo</h2>
+                <p class="text-sm opacity-80 text-center mb-6">Tem alguma dúvida ou proposta de projeto? Envie uma mensagem!</p>
+                
+               
+                <form action="#" method="POST" class="space-y-4">
+                    
+                    <fieldset class="fieldset">
+                        <label class="label" for="name">Nome</label>
+                        <input type="text" id="name" class="input w-full" placeholder="Seu nome" required />
+                    </fieldset>
+
+                   
+                    <fieldset class="fieldset">
+                        <label class="label" for="email">E-mail</label>
+                        <input type="email" id="email" class="input w-full" placeholder="seu@email.com" required />
+                    </fieldset>
+
+                    
+                    <fieldset class="fieldset">
+                        <label class="label" for="message">Mensagem</label>
+                        <textarea id="message" class="textarea w-full h-24" placeholder="Escreva a sua mensagem..." required></textarea>
+                    </fieldset>
+
+                   
+                    <p class="text-xs text-center opacity-70 mt-2">Preencha todos os dados com atenção</p>
+
+                   
+                    <div class="card-actions justify-end mt-4">
+                        <button type="submit" class="btn btn-primary w-full">Enviar Mensagem</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
 </body>
 
