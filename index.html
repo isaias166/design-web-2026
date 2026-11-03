@@ -102,10 +102,17 @@
         // lista funcionando antes do TODO 4.
         // Substitua este retorno ao fazer a tarefa.
         // ==========================================
+      computed :{
+        
         oficinasVisiveis() {
+          if (this.filtro === 'faviritas'){
+            return this.oficinas.filter(oficina => oficina.favorita);
+
+          }
           return this.oficinas;
         }
       },
+      }
 
       // ==========================================
       // as ações do catálogo
@@ -133,7 +140,21 @@
         //  5. Chame this.limparCampo()
         // ==========================================
         adicionarOficina() {
-          // ... seu código aqui
+          const titulo = this.nova.oficina.trim();
+          if (titulo === ''){
+            return;
+          }
+
+          this.oficinas.push({
+            id: this.proximoId,
+            titulo: titulo,
+            favorita: false
+          });
+
+          this.proximoId++
+          
+          this.limparCampo();
+
         },
 
         // ==========================================
