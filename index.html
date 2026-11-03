@@ -104,7 +104,7 @@
       computed: {
         
         oficinasVisiveis() {
-          if (this.filtro === 'faviritas'){
+          if (this.filtro === 'favoritas'){
             return this.oficinas.filter(oficina => oficina.favorita);
 
           }
@@ -138,7 +138,7 @@
         //  5. Chame this.limparCampo()
         // ==========================================
         adicionarOficina() {
-          const titulo = this.nova.oficina.trim();
+          const titulo = this.novaOficina.trim();
           if (titulo === ''){
             return;
           }
@@ -150,7 +150,6 @@
           });
 
           this.proximoId++;
-          
           this.limparCampo();
 
         },
@@ -169,14 +168,14 @@
         //       oficina.favorita = !oficina.favorita
         // ==========================================
         alternarFavorito(id) {
-          const oficina - this.oficina.find(
+          const oficina = this.oficinas.find(
             item => item.id === id
           )
           if(!oficina){
             return;
           }
 
-          oficina.favorita=!oficina.favorita;
+          oficina.favorita = !oficina.favorita;
           
         },
 
@@ -192,8 +191,10 @@
         //  3. Observe como v-for atualiza a interface
         // ==========================================
         removerOficina(id) {
-          // ... seu código aqui
-        }
+          this.oficinas = this.oficinas.filter(
+            item => item.id !==id
+          );
+        } 
       }
 
     }).mount('#app')
