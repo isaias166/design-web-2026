@@ -85,24 +85,23 @@
       // ==========================================
       // dados calculados automaticamente
       // ==========================================
+      
+      // ==========================================
+      // TODO 4 — oficinasVisiveis()  
+      // Seleciona quais oficinas serão mostradas.
+      // É usado no v-for e no contador da página.
+      //
+      // Regras:
+      //  1. Se this.filtro === 'favoritas':
+      //       retorne somente as oficinas em que
+      //       oficina.favorita for true (use .filter())
+      //  2. Caso contrário: retorne this.oficinas
+      //
+      // O retorno abaixo é provisório: mantém a
+      // lista funcionando antes do TODO 4.
+      // Substitua este retorno ao fazer a tarefa.
+      // ==========================================
       computed: {
-
-        // ==========================================
-        // TODO 4 — oficinasVisiveis()  
-        // Seleciona quais oficinas serão mostradas.
-        // É usado no v-for e no contador da página.
-        //
-        // Regras:
-        //  1. Se this.filtro === 'favoritas':
-        //       retorne somente as oficinas em que
-        //       oficina.favorita for true (use .filter())
-        //  2. Caso contrário: retorne this.oficinas
-        //
-        // O retorno abaixo é provisório: mantém a
-        // lista funcionando antes do TODO 4.
-        // Substitua este retorno ao fazer a tarefa.
-        // ==========================================
-      computed :{
         
         oficinasVisiveis() {
           if (this.filtro === 'faviritas'){
@@ -112,7 +111,6 @@
           return this.oficinas;
         }
       },
-      }
 
       // ==========================================
       // as ações do catálogo
@@ -151,7 +149,7 @@
             favorita: false
           });
 
-          this.proximoId++
+          this.proximoId++;
           
           this.limparCampo();
 
@@ -171,7 +169,15 @@
         //       oficina.favorita = !oficina.favorita
         // ==========================================
         alternarFavorito(id) {
-          // ... seu código aqui
+          const oficina - this.oficina.find(
+            item => item.id === id
+          )
+          if(!oficina){
+            return;
+          }
+
+          oficina.favorita=!oficina.favorita;
+          
         },
 
         // ==========================================
